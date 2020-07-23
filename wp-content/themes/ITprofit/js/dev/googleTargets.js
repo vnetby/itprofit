@@ -24,15 +24,10 @@ export const googleTargets = () => {
 
 const initForms = () => {
   dom.on('wpcf7mailsent', '.wpcf7', e => {
-    yaCounter65474599.reachGoal('formsubmit');
-    // ga('send', 'event', 'form', 'submit');
-    ga('send', {
-      hitType: 'event',
-      eventCategory: 'form',
-      eventAction: 'submit'
-    });
+    yaCounter65474599.reachGoal('optformsuccess');
 
-    console.log(`Yandex: formsubmit\r\nGoogle категория: form\r\nGoogle action: submit`);
+    dataLayer.push({ event: 'optformsuccess' });
+    console.log(`Yandex: optformsuccess\r\nGoogle: optformsuccess`);
   });
 }
 
@@ -54,14 +49,9 @@ const initSocialClick = () => {
     let btn = e.currentTarget;
     let type = btn.dataset.gtType || 'social';
     yaCounter65474599.reachGoal(type + 'me');
-    // ga('send', 'event', type, 'me');
-    ga('send', {
-      hitType: 'event',
-      eventCategory: type,
-      eventAction: 'me'
-    });
 
-    console.log(`Yandex: ${type}me\r\nGoogle категория: ${type}\r\nGoogle action: me`);
+    dataLayer.push({ event: `${type}me` });
+    console.log(`Yandex: ${type}me\r\nGoogle: ${type}me`);
   });
 }
 
@@ -83,14 +73,9 @@ const initPhoneClick = () => {
     let btn = e.currentTarget;
     if (btn.classList.contains('js-hidden-phone') && !btn.classList.contains('active')) {
       yaCounter65474599.reachGoal('phoneclick');
-      // ga('send', 'event', 'phone', 'click');
-      ga('send', {
-        hitType: 'event',
-        eventCategory: 'phone',
-        eventAction: 'click'
-      });
 
-      console.log(`Yandex: phoneclick\r\nGoogle категория: phone\r\nGoogle action: click`);
+      dataLayer.push({ event: `phoneclick` });
+      console.log(`Yandex: phoneclick\r\nGoogle: phoneclick`);
     }
   });
 }
@@ -111,13 +96,8 @@ const initPhoneClick = () => {
 const initEmailClick = () => {
   dom.onClick('.gt-email', e => {
     yaCounter65474599.reachGoal('mailme');
-    // ga('send', 'event', 'mail', 'me');
-    ga('send', {
-      hitType: 'event',
-      eventCategory: 'mail',
-      eventAction: 'me'
-    });
-    console.log(`Yandex: mailme\r\nGoogle категория: mail\r\nGoogle action: me`);
+    dataLayer.push({ event: `mailme` });
+    console.log(`Yandex: mailme\r\nGoogle: mailme`);
   });
 }
 
@@ -138,15 +118,10 @@ const initCopyText = () => {
   dom.on('copy', dom.body, e => {
     if (!e.target.classList.contains('gt-email')) return;
     let text = getSelectedText();
-    if (text.indexOf('info@b-ts.ru') !== -1) {
+    if (e.target.classList.contains('gt-email')) {
       yaCounter65474599.reachGoal('mailcopy');
-      // ga('send', 'event', 'mail', 'copy');
-      ga('send', {
-        hitType: 'event',
-        eventCategory: 'mail',
-        eventAction: 'copy'
-      });
-      console.log(`Yandex: mailcopy\r\nGoogle категория: mail\r\nGoogle action: copy`);
+      dataLayer.push({ event: `mailcopy` });
+      console.log(`Yandex: mailcopy\r\nGoogle: mailcopy`);
     }
   });
 }
