@@ -1,0 +1,22 @@
+.custom_sh_box select { background-color: #fff; outline: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+
+.custom_sh_box .b { font-weight: bold; }
+
+.flex { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
+
+.column { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }
+
+.flex__start { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: start; -webkit-align-items: flex-start; -ms-flex-align: start; align-items: flex-start; -webkit-box-pack: start; -webkit-justify-content: flex-start; -ms-flex-pack: start; justify-content: flex-start; }
+
+.flex__beetween { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: start; -webkit-align-items: flex-start; -ms-flex-align: start; align-items: flex-start; -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; }
+
+.flex__wrap { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+.sh_box {padding: 12px 0; border-bottom: 1px solid #888888; margin-bottom: 4px; align-items: center}
+.sh_box .label {margin-right: 24px; font-weight: bold;}
+.custom_sh_box input, .custom_sh_box textarea { padding: 6px; width: 100%; background-color: #fff; border: #666 1px solid; border-radius: 4px; outline: none; }
+.custom_sh_box input + .label {margin-left: 24px}
+.custom_sh_box textarea {height: 80px}
+.custom_sh_box input {max-width: 370px}
+.custom_sh_box input:focus, .custom_sh_box textarea:focus { border: #007cba 1px solid; box-shadow: 0 0 0 1px #007cba; }
+.button_new_form {margin: 12px 0; cursor: pointer}
+.button_new_form span { padding: 8px; border-radius: 6px; border: 1px solid #666; color: #666}
